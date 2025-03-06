@@ -1,0 +1,43 @@
+{
+	"name": "Python & Typescript",
+	
+	//"image": "mcr.microsoft.com/devcontainers/base:bookworm",
+  	"build": { "dockerfile": "../Dockerfile" },
+	
+	// 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
+		"ghcr.io/prulloac/devcontainer-features/bun:1": {},
+		"ghcr.io/devcontainers/features/node:1": {},
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"configureZshAsDefaultShell": true
+		},
+		"ghcr.io/devcontainers/features/python:1": {},
+		"ghcr.io/devcontainers-contrib/features/poetry:2": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	},
+	
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+                "ms-python.vscode-pylance",
+				"ms-azuretools.vscode-docker"
+			],
+			"settings": {
+				"python.pythonPath": "/usr/local/lib/python3.13",
+				//"python.terminal.activateEnvInCurrentTerminal": true,
+				"python.defaultInterpreterPath": "/usr/local/bin/python3.13"
+			}
+		}
+	},
+
+	// 👇 Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [8000],
+
+	// 👇 Configure tool-specific properties.
+	// "customizations": {},
+
+	// 👇 Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "appuser"
+}
