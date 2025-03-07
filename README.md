@@ -6,3 +6,6 @@ Setup and troubleshooting notes:
 -- Command palette "Developer: Reload Window" to not get "no registered task type: 'docker-build'" error
 -- Change my selected Python interpreter to the same Python3.13 interpreter that is set as the preferred path: Command Palette and "Python: Select Interpreter"
 -- Open new bash Terminal window to get proper interpreter to which pip -m had installed Python packages
+
+TODO:
+- Noting that it looks like the docker-run step did not work even after the reload. Needed to manually run `python manage.py runserver` to get django app up.
