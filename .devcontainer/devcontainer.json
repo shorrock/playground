@@ -3,7 +3,11 @@
 	
 	//"image": "mcr.microsoft.com/devcontainers/base:bookworm",
   	"build": { "dockerfile": "../Dockerfile" },
-	
+
+	"containerEnv": {
+		"PYTHONPATH": "/workspaces/playground/lexica"
+	},
+
 	// 👇 Features to add to the Dev Container. More info: https://containers.dev/implementors/features.
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
@@ -13,7 +17,7 @@
 			"configureZshAsDefaultShell": true
 		},
 		"ghcr.io/devcontainers/features/python:1": {},
-		"ghcr.io/devcontainers-contrib/features/poetry:2": {},
+		"ghcr.io/devcontainers-extra/features/poetry:2": {},
 		"ghcr.io/devcontainers/features/github-cli:1": {}
 	},
 	
@@ -39,5 +43,7 @@
 	// "customizations": {},
 
 	// 👇 Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	"remoteUser": "appuser"
+	"remoteUser": "appuser",
+
+	"postCreateCommand": "ln -sf /usr/local/bin/python3.13 /usr/local/python/current/bin/python && ln -sf /usr/local/bin/pip3.13 /usr/local/python/current/bin/pip"
 }
